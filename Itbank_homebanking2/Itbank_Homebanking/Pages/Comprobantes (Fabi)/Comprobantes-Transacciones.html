@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="#">
+    <title>ITBANK</title>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="../../Styles/Styles.css">
+    
+</head>
+
+<body>
+        <div>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    <img src="../../Multimedia/logoITBANK.png" alt="logoITBANK" width="50%" height="24%">
+                  </a>
+                  <div class="iconos">
+                    <a class="usuario" href="https://campus.itba.edu.ar/">
+                      <img src="../../Multimedia/iconousuario.png" alt="usuario" width="60px" height="50px">
+                    </a>
+                    <a class="ayuda" href="https://www.itba.edu.ar/intranet/como-hago/">
+                      <img src="../../Multimedia/signoayuda.png" alt="ayuda" width="60px" height="50px">
+                    </a>
+                </div>
+                </div>
+              </nav>
+        </div>
+    
+      
+    <div class="container">
+        <h1>COMPROBANTES</h1>
+        <div class="row">
+            <!--Buttons-->
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="d-grid gap-2">
+                    <div class="dropdown d-grid gap-2">
+                        <a class="btn dropdown-toggle" role="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >Transacciones</a>
+                        <ul class="dropdown-menu" id="lista" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#">Cuenta en Pesos</a></li>
+                          <li><a class="dropdown-item" href="Comprobantes-TransaccionesUSD.html">Cuenta en USD</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn" href="Comprobantes-Debitos.html" role="button">Débitos Autómaticos</a>
+                    <a class="btn" href="Comprobantes-Creditos.html" role="button">Créditos</a>
+                    <a class="btn" href="Comprobantes-Pagosdeservicios.html" role="button">Pago de Servicios</a>
+                    <a class="btn" href="Comprobantes-Transferencias.html" role="button">Transferencias</a>
+                    <a class="btn" id="volver" href="../../Pages/Iniciar sesion (cami)/inicio.html" role="buton">Volver</a>
+                  </div>
+            </div>
+
+            <div  class= "col-sm-12 col-md-8 col-lg-8 col-xl-8">
+               <h2>Comprobantes > Transacciones > Cuenta en Pesos</h2>
+                <table class= "table" id="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Fecha
+                            </th>
+                            <th>
+                                N° Transcaccion
+                            </th>
+                            <th>
+                                Descripcion
+                            </th>
+                            <th>
+                                Medio
+                            </th>
+                            <th>
+                                Importe
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Marzo
+                            </td>
+                            <td>
+                                #00000
+                            </td>
+                            <td>
+                                Deposito
+                            </td>
+                            <td>
+                                0000-0000-0000-0001 <br>
+                                Cuenta en Pesos
+                            </td>
+                            <td>
+                                $2000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Marzo
+                            </td>
+                            <td>
+                                #00001
+                            </td>
+                            <td>
+                                Transferencia Veterinario
+                            </td>
+                            <td>
+                                0000-0000-0000-0001<br>
+                                Cuenta en Pesos
+                            </td>
+                            <td>
+                                - $2000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Abril
+                            </td>
+                            <td>
+                                #00002
+                            </td>
+                            <td>
+                                Pago de Servicios
+                                ITBA - Beca
+                            </td>
+                            <td>
+                                0000-0000-0000-0001<br>
+                                Cuenta en Pesos
+                            </td>
+                            <td>
+                                $-4000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Abril
+                            </td>
+                            <td>
+                                #00002
+                            </td>
+                            <td>
+                                Manicura Carla Aguero
+                            </td>
+                            <td>
+                                0000-0000-0000-0001<br>
+                                Cuenta en Pesos
+                            </td>
+                            <td>
+                                $5800
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Abril
+                            </td>
+                            <td>
+                                #00003
+                            </td>
+                            <td>
+                                Débito Automático
+                            </td>
+                            <td>
+                                0000-0000-0000-0001<br>
+                                Cuenta en Pesos
+                            </td>
+                            <td>
+                                $10.850,72
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
+        </div>
+    </div>
+     <main>  
+    </main> 
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+crossorigin="anonymous"></script>
+    <!--JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--JS-->
+    <script src="../../javascript/script.js"></script>
+</body>  
+
+</html>
