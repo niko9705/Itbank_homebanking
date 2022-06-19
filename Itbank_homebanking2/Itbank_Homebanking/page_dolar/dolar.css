@@ -1,0 +1,56 @@
+* {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    margin: 2rem;
+}
+
+#tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 20rem;
+    margin: 1rem;
+}
+
+.headertarjetas {
+    margin: 0%;
+}
+
+.titulotarjetas {
+    font-size: larger;
+    background-color: pink;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.centro {
+    width: 100%;
+    background-color: beige;
+}
+
+.izquierda {
+    width: 50%;
+    background-color: beige;
+}
+
+.derecha {
+    width: 50%;
+    background-color: beige;
+}
+
+.abajo {
+    width: 100%;
+}
+
+.footertarjetas {
+    margin: 0%;
+    background-color: pink;
+}
