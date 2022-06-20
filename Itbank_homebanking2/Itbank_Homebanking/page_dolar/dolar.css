@@ -34,16 +34,19 @@
 .centro {
     width: 100%;
     background-color: beige;
+    display: grid;
 }
 
 .izquierda {
     width: 50%;
     background-color: beige;
+    display: grid;
 }
 
 .derecha {
     width: 50%;
     background-color: beige;
+    display: grid;
 }
 
 .abajo {
