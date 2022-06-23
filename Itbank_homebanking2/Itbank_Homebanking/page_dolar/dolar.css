@@ -1,3 +1,9 @@
+#titulo {
+    color: black;
+    background-color: lightgreen;
+    padding-left: 0%;
+}
+
 * {
     text-align: center;
 }
@@ -23,7 +29,7 @@
 
 .titulotarjetas {
     font-size: larger;
-    background-color: pink;
+    background-color: lightgreen;
 }
 
 .main {
@@ -55,5 +61,5 @@
 
 .footertarjetas {
     margin: 0%;
-    background-color: pink;
+    background-color: lightgreen;
 }
