@@ -1,38 +1,36 @@
 "use strict"
 
-const persona = document.getElementById('nombre');
-const gasto = document.getElementById('gasto');
-const personas = [];
-const gastos = [];
-const listaDeGastos = document.getElementById('lista');
-const parteTotal = document.getElementById('total');
+var datosPersonas = [];
+var gastos = [];
+var parteTotal = document.getElementById('total');
 
-function dividir() {
-    adherirGastosaListas();
-    ultimoAPantalla();
-    TransaccionIndividualHTML();
+window.onload = function() {
+    datosPersonas = [];
+    gastos = [];
 }
 
-function adherirGastosAListas() {
-    personas.push(persona.value);
-    gastos.push(gasto.value);
+function agregarPersonaYGastoAArray() {
+    let persona = document.getElementById('nombre').value;
+    let gasto = document.getElementById('gasto').value;
+
+    datosPersonas.push({persona, gasto});
+    gastos.push(gasto);
 }
 
-function ultimoAPantalla() {
-    const li = document.createElement('li');
-    li.classList.add('lista-item');  
-    const text = document.createTextNode(`${personas[personas.length - 1]}: $${gastos[gastos.length - 1]}`);
-    li.append(text);
-    listaDeGastos.appendChild(li);
+function mostrarResultados() {
+    let listaDeGastos = document.getElementById('lista');
+    listaDeGastos.innerHTML = '';
+
+    for (const datoPersona of datosPersonas) {
+        let gastoPorPersona = document.createElement('li');
+        gastoPorPersona.innerText = datoPersona["persona"] + ": " + datoPersona["gasto"];
+
+        listaDeGastos.appendChild(gastoPorPersona);
+    }
+    aportePorPersona();
 }
 
-function TransaccionIndividualHTML() {
-    const total = sumarValores(gastos).toFixed(2);
-    parteTotal.innerText = `Total: ${total}
-    A cada uno le toca aportar: ${total / gastos.length}`;
-}
-
-function adicionValores(array) {
+function sumaDeGastos(array) {
     let total = 0;
     for(var i = 0; i < array.length; i++) {
         total += parseFloat(array[i]);
@@ -40,3 +38,8 @@ function adicionValores(array) {
     return total;
 }
 
+function aportePorPersona() {
+    const total = sumaDeGastos(gastos).toFixed(2);
+    parteTotal.innerText = `Total: ${total}
+    A cada uno le toca aportar: ${total / gastos.length}`;
+}
