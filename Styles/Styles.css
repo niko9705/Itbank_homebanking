@@ -1,0 +1,124 @@
+/*RESET*/
+*{
+	margin: 0;
+	padding: 0;
+}
+.row{
+	margin-top: 1.5rem;
+}
+.body {
+	background-image: url('../Multimedia/fondoInicio.png');
+	background-repeat: no-repeat;
+	background-size: 100% 75%;
+}
+h1 {
+	display: none;
+}
+.usuario, .ayuda{
+	padding: 0.3rem;
+}
+.main{
+	display: flex;
+	justify-content: space-between;
+}
+.bienvenido {
+	display: flex;
+	justify-content: left;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 1.5rem;
+	margin-left: 5.8rem;
+}
+.inicio {
+	display: flex;
+	justify-content: flex-end;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+	margin: 2.5rem 0.3rem 2.5rem 0.3rem;
+	width: 50%;
+}
+ .inicio .botones{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: rgba(25,135,84, 0.8);
+	margin: 0 1.5rem;
+	padding: 3rem 1.5rem;
+	width: 100%;
+} 
+.btn {
+	color: black;
+	background-color: #16B598;	
+}
+.botones .user {
+	color: white;
+	background-color: #212529;	
+} 
+
+#volver {
+	background-color: #F89C1F;
+}
+.btn:hover, #volver:hover{
+	color: white;
+	border-color: #6F42C1;
+	background-color: #6F42C1;
+}
+
+@media screen and (max-width: 768px) {
+	.activo{
+		display: none;
+	}
+	table {
+		margin-top: 1rem;
+		width:100%;
+	}
+	thead {
+		display: none;
+	}
+
+	tr td:first-child {
+		background: #f0f0f0;
+		font-weight:bold;
+		font-size:1.3em;
+	}
+	tbody td {
+		display: block;
+		text-align:center;
+	}
+	h2{
+		display: none;
+	}
+	h1 { 
+		text-align: center;
+		display: block;
+	}
+	.container {
+		margin-top: 1.5rem;
+	}
+	.navbar-brand {
+		display: block;
+	}
+	.navbar .container-fluid {
+		flex-wrap: nowrap;			
+	}
+	.container-fluid .iconos {
+		display: flex;
+	}
+	.body {
+		background: url('../Multimedia/RfondoInicio.png');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	.main {
+		display: block;
+	}
+	.bienvenido{
+		display: flex;
+		justify-content: center;
+		margin: 1rem 0;
+	}
+	.inicio{
+	width: 100%;
+	margin: 1rem 0;
+	}
+	
+}

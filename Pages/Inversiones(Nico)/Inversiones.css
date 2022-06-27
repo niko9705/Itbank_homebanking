@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+
+
+
+/*Fuentes de texto, márgenes y demás*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', sans-serif;
+    text-decoration: none;
+}
+/*Esta es la parte del logo*/
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background:#212529;
+}
+
+
+
+.logo_superior{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img{
+    
+    background-color:#212529;
+    width: 250px;
+}
+
+.Inversiones{
+    color: white;
+    width: 300px;
+    padding: 5px;
+}
+
+/*Barra de menu de opciones*/
+.container_barra {
+    width: 100%;
+    height: 70px;
+    background:beige;
+    padding: 0px 20px;
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+}
+
+nav{
+    height: 100%;
+}
+
+nav > ul {
+    height: 100%;
+    display: flex;
+}
+
+nav ul li {
+    height: 100;
+    list-style: none;
+    position: relative;
+}
+
+
+nav > ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 300ms ease;
+}
+
+nav > ul > li > a:hover {
+    transform: scale(1.1);
+    background: #0074c7
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5)
+}
+/*Menu de opciones*/
+nav ul li ul{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 90px;
+    left: -5px;
+    padding: 14px 0px ;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    z-index: 10;
+    transition: all 300ms ease;
+}
+/*Animaciones del efecto hover*/
+nav ul li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+}
+
+nav ul li ul li a{
+    display: block;
+    color:blueviolet
+    padding: 6px;
+    padding-left: 14px;
+    margin-top: 10px;
+    font-size: 14px
+    text-transform: uppercase;
+    transition: all 300ms ease;
+}
+
+nav ul li ul li a:hover{
+    background:#0074c7;
+    color:#fff;
+    transform: scale(1.1);
+    padding: left: 30px;
+    fons-size: 14px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+#seleccion{
+    transform: scale(1.1);
+    background-color:lightgreen;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+/*artículos*/
+
+main{
+    background: white;
+    padding: 40px 20px;
+    margin-top: 194px;
+}
+
+article{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px;
+    background:#16B598 ;
+    color:#212529;
+}
+
+footer{
+    background-color:#212529;
+    padding: 20px;
+    color: white
+}
+
+
+
+/*No funciona!!!*/
+/*Haciendo responsive la página 
+
+.fas fa-bars{
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    width: 26px;
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+#label__check{
+    width: 26px;
+    height: 100%;
+    display: none;
+}
+
+#check_menu{
+    display: none;
+}
+
+@media screen and {max-width: 720px;
+    .logo_superior {
+        padding: 10px;
+    }
+    
+    .logo img{
+        width: 200px;
+    }
+
+    nav > ul{
+        flex-direction: column;
+        background-color: black;
+        position: fixed;
+        left: 0;
+        top: 158px
+        width: 100%;
+        height: 300px
+        transition: all 300ms ease;
+        z-index:100;
+        *opacity: 0;
+        *visibility: hidden;
+    }
+
+    nav > ul > li > a:hover{
+        transform: scale(1);
+    }
+
+    nav ul li ul {
+        left: 90px;
+    }
+
+    nav > ul > li:hover ul{
+        top: 50px;
+    }
+
+    nav > ul > li:first-child a{
+        background-position: 20px
+    }
+
+    .Inicio{
+        transform: scale(1);
+    }
+}
+
+
+
