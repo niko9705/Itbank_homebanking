@@ -1,3 +1,18 @@
+#app {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: initial;
+    font-weight: bolder;
+}
+
+#app2 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: initial;
+    font-weight: bolder;
+    font-variant: unset;
+}
+
 .form-control-lg {
     margin: 1rem;
 }
