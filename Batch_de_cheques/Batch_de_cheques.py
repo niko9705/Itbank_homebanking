@@ -10,17 +10,19 @@ def lectura():
     with open(PATH_CHEQUES) as archivo:
         cheques = csv.DictReader(archivo)  ##lector de diccionarios (convierte cada linea del archivo csv en un diccionario)
         for cheque in cheques:
-            if(cheque['DNI'] == argumentos[0] and cheque['Tipo'] == argumentos[2] and cheque['Estado'] == argumentos[3]):
+            if (cheque['DNI'] == argumentos[0] and cheque['Tipo'] == argumentos[2] and cheque['Estado'] == argumentos[3]):
                 if(argumentos[1] == 'PANTALLA'):
+                    #print("Entré en el primer if")
                     print(f"Número de cheque: {cheque['NroCheque']}\nCódigo de banco: {cheque['CodigoBanco']}\nCódigo de sucursal: {cheque['CodigoSucursal']}\nNúmero de cuenta de origen: {cheque['NumeroCuentaOrigen']}\nNúmero de cuenta de destino: {cheque['NumeroCuentaDestino']}\nValor: {cheque['Valor']}\nFecha de origen: {cheque['FechaOrigen']}\nFecha de pago: {cheque['FechaPago']}\nDNI: {cheque['DNI']}\nTipo: {cheque['Tipo']}\nEstado: {cheque['Estado']}")
                 elif(argumentos[1] == 'CSV'):
                     with open(f"{cheque['DNI']}_{cheque['FechaPago']}.csv", "w", newline="") as archivocsv:
                         cheques.writer = csv.DictWriter(archivocsv, fieldnames = ["NroCheque","CodigoBanco","CodigoSucursal","NumeroCuentaOrigen","NumeroCuentaDestino","Valor","FechaOrigen","FechaPago","DNI","Tipo","Estado"])
                         cheques.writer.writeheader()
                         cheques.writer.writerow(cheque)
-                    #va el codigo para armar el cheque en formato CSV
+#va el codigo para armar el cheque en formato CSV
 #para encontrar el archivo hay que escribir Batch_de_cheques//Batch_de_cheques.py
-
+## 1er ejemplo: py Batch_de_cheques//Batch_de_cheques.py 41568226 CSV EMITIDO PENDIENTE
+## 2do ejemplo: py Batch_de_cheques//Batch_de_cheques.py 40256359 CSV DEPOSITADO APROBADO
 lectura()
 
 
