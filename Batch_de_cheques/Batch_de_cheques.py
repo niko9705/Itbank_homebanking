@@ -17,7 +17,7 @@ def lectura():
                     with open(f"{cheque['DNI']}_{cheque['FechaPago']}.csv", "w", newline="") as archivocsv:
                         cheques.writer = csv.DictWriter(archivocsv, fieldnames = ["NroCheque","CodigoBanco","CodigoSucursal","NumeroCuentaOrigen","NumeroCuentaDestino","Valor","FechaOrigen","FechaPago","DNI","Tipo","Estado"])
                         cheques.writer.writeheader()
-                        cheques.writerow(cheque)
+                        cheques.writer.writerow(cheque)
                     #va el codigo para armar el cheque en formato CSV
 #para encontrar el archivo hay que escribir Batch_de_cheques//Batch_de_cheques.py
 
