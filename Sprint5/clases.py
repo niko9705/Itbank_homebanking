@@ -1,13 +1,88 @@
 import json
+from operator import index
+#Las funciones cargar_datos cargan los datos del JSON
+
+classic = {}
 
 def cargar_datos_classic(ruta):
     with open(ruta) as contenido:
         classic = json.load(contenido)
-        print(classic)
+        del(classic['numero'])
+        del(classic['nombre'])
+        del(classic['apellido'])
+        del(classic['dni'])
+        del(classic['tipo'])
+        del(classic['direccion'])
+        print(f"\nTransacción 1:\nEstado: {classic['transacciones'][0]['estado']}\
+            \nTipo: {classic['transacciones'][0]['tipo']}\nNúmero de cuenta: {classic['transacciones'][0]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][0]['cupoDiarioRestante']}\nCantidad de extracciones hechas: {classic['transacciones'][0]['cantidadExtraccionesHechas']}\nMonto: {classic['transacciones'][0]['monto']}\nFecha: {classic['transacciones'][0]['fecha']}\nNúmero: {classic['transacciones'][0]['numero']}\nSaldo en cuenta: {classic['transacciones'][0]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][0]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][0]['totalChequerasActualmente']}\
+            \n\nTransacción 2:\nEstado: {classic['transacciones'][1]['estado']}\nTipo: {classic['transacciones'][1]['tipo']}\nNúmero de cuenta: {classic['transacciones'][1]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][1]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][1]['monto']}\nFecha: {classic['transacciones'][1]['fecha']}\nNúmero: {classic['transacciones'][1]['numero']}\nSaldo en cuenta: {classic['transacciones'][1]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][1]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][1]['totalChequerasActualmente']}\
+            \n\nTransacción 3:\nEstado: {classic['transacciones'][2]['estado']}\nTipo: {classic['transacciones'][2]['tipo']}\nNúmero de cuenta: {classic['transacciones'][2]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][2]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][2]['monto']}\nFecha: {classic['transacciones'][2]['fecha']}\nNúmero: {classic['transacciones'][2]['numero']}\nSaldo en cuenta: {classic['transacciones'][2]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][2]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][2]['totalChequerasActualmente']}\
+            \n\nTransacción 4:\nEstado: {classic['transacciones'][3]['estado']}\nTipo: {classic['transacciones'][3]['tipo']}\nNúmero de cuenta: {classic['transacciones'][3]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][3]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][3]['monto']}\nFecha: {classic['transacciones'][3]['fecha']}\nNúmero: {classic['transacciones'][3]['numero']}\nSaldo en cuenta: {classic['transacciones'][3]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][3]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][3]['totalChequerasActualmente']}\
+            \n\nTransacción 5:\nEstado: {classic['transacciones'][4]['estado']}\nTipo: {classic['transacciones'][4]['tipo']}\nNúmero de cuenta: {classic['transacciones'][4]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][4]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][4]['monto']}\nFecha: {classic['transacciones'][4]['fecha']}\nNúmero: {classic['transacciones'][4]['numero']}\nSaldo en cuenta: {classic['transacciones'][4]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][4]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][4]['totalChequerasActualmente']}\
+            \n\nTransacción 6:\nEstado: {classic['transacciones'][5]['estado']}\nTipo: {classic['transacciones'][5]['tipo']}\nNúmero de cuenta: {classic['transacciones'][5]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][5]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][5]['monto']}\nFecha: {classic['transacciones'][5]['fecha']}\nNúmero: {classic['transacciones'][5]['numero']}\nSaldo en cuenta: {classic['transacciones'][5]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][5]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][5]['totalChequerasActualmente']}\
+            \n\nTransacción 7:\nEstado: {classic['transacciones'][6]['estado']}\nTipo: {classic['transacciones'][6]['tipo']}\nNúmero de cuenta: {classic['transacciones'][6]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][6]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][6]['monto']}\nFecha: {classic['transacciones'][6]['fecha']}\nNúmero: {classic['transacciones'][6]['numero']}\nSaldo en cuenta: {classic['transacciones'][6]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][6]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][6]['totalChequerasActualmente']}\
+            \n\nTransacción 8:\nEstado: {classic['transacciones'][7]['estado']}\nTipo: {classic['transacciones'][7]['tipo']}\nNúmero de cuenta: {classic['transacciones'][7]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][7]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][7]['monto']}\nFecha: {classic['transacciones'][7]['fecha']}\nNúmero: {classic['transacciones'][7]['numero']}\nSaldo en cuenta: {classic['transacciones'][7]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][7]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][7]['totalChequerasActualmente']}\
+            \n\nTransacción 9:\nEstado: {classic['transacciones'][8]['estado']}\nTipo: {classic['transacciones'][8]['tipo']}\nNúmero de cuenta: {classic['transacciones'][8]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][8]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][8]['monto']}\nFecha: {classic['transacciones'][8]['fecha']}\nNúmero: {classic['transacciones'][8]['numero']}\nSaldo en cuenta: {classic['transacciones'][8]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][8]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][8]['totalChequerasActualmente']}\
+            \n\nTransacción 10:\nEstado: {classic['transacciones'][9]['estado']}\nTipo: {classic['transacciones'][9]['tipo']}\nNúmero de cuenta: {classic['transacciones'][9]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][9]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][9]['monto']}\nFecha: {classic['transacciones'][9]['fecha']}\nNúmero: {classic['transacciones'][9]['numero']}\nSaldo en cuenta: {classic['transacciones'][9]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][9]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][9]['totalChequerasActualmente']}")
+        print(estado_de_transacciones(classic))
+
+def razon_de_transacciones_rechazadas(classic):
+    if(classic['transacciones'][1]):
+        print('se ha excedido del cupo diario restante y del monto máximo')
+    elif(classic['transacciones'][2]):
+        print('se ha excedido del cupo diario restante')
+    elif(classic['transacciones'][3]):
+        print('se ha excedido del cupo diario restante')
+    elif(classic['transacciones'][4]):
+        print('no está permitido poseer tarjeta de crédito')
+    elif(classic['transacciones'][5]):
+        print('no está permitido poseer chequera')
+    elif(classic['transacciones'][6]):
+        print('no está permitida la compra de dólares')
+    elif(classic['transacciones'][7]):
+        print('se ha excedido del monto máximo')
+    elif(classic['transacciones'][9]):
+        print('se ha excedido del monto máximo')
+
+def estado_de_transacciones(classic):
+    print("TRANSACCIONES ACEPTADAS Y RECHAZADAS:")
+    for ordenDeTransaccion in classic['transacciones']:
+        if(ordenDeTransaccion['estado'] == 'ACEPTADA'):
+            print('La transacción ha sido ACEPTADA')
+        else:
+            print('La transacción ha sido RECHAZADA porque ' + razon_de_transacciones_rechazadas(classic))
         
-if __name__ == '__main__':
-    ruta ='JSON/eventos_classic.json' ##no me sale bien la dirección:(((
-    cargar_datos_classic(ruta)
+
+#Tengo que ver cómo hacer para que las funciones me tomen el classic[''][0]['tipo'] como un valor JSON y no como un string
+#En estas funciones no es necesario mostrar el nombre, apellido, numero, dni, ni direccion porque ya se muestran
+#con el método __str__ de la clase cliente
+
+#La idea es que las funciones clargar_datos muestren los datos de las transacciones y llamen a otras funciones 
+#que analicen dichos datos y dependiendo de si figuran como APROBADOS o RECHAZADOS digan por qué lo fueron
+
+
+def cargar_datos_gold(ruta):
+    with open(ruta) as contenido:
+        gold = json.load(contenido)
+        print(f"\nTransacción 1:\nEstado: {gold['transacciones'][0]['estado']}\nTipo: {gold['transacciones'][0]['tipo']}\nNúmero de cuenta: {gold['transacciones'][0]['cuentaNumero']}\nCupo diario restante: {gold['transacciones'][0]['cupoDiarioRestante']}\nCantidad de extracciones hechas: {gold['transacciones'][0]['cantidadExtraccionesHechas']}\nMonto: {gold['transacciones'][0]['monto']}\nFecha: {gold['transacciones'][0]['fecha']}\nNúmero: {gold['transacciones'][0]['numero']}\nSaldo en cuenta: {gold['transacciones'][0]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {gold['transacciones'][0]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {gold['transacciones'][0]['totalChequerasActualmente']}\
+            \n\nTransacción 2:\nEstado: {gold['transacciones'][1]['estado']}\nTipo: {gold['transacciones'][1]['tipo']}\nNúmero de cuenta: {gold['transacciones'][1]['cuentaNumero']}\nCupo diario restante: {gold['transacciones'][1]['cupoDiarioRestante']}\nMonto: {gold['transacciones'][1]['monto']}\nFecha: {gold['transacciones'][1]['fecha']}\nNúmero: {gold['transacciones'][1]['numero']}\nSaldo en cuenta: {gold['transacciones'][1]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {gold['transacciones'][1]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {gold['transacciones'][1]['totalChequerasActualmente']}\
+            \n\nTransacción 3:\nEstado: {gold['transacciones'][2]['estado']}\nTipo: {gold['transacciones'][2]['tipo']}\nNúmero de cuenta: {gold['transacciones'][2]['cuentaNumero']}\nCupo diario restante: {gold['transacciones'][2]['cupoDiarioRestante']}\nMonto: {gold['transacciones'][2]['monto']}\nFecha: {gold['transacciones'][2]['fecha']}\nNúmero: {gold['transacciones'][2]['numero']}\nSaldo en cuenta: {gold['transacciones'][2]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {gold['transacciones'][2]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {gold['transacciones'][2]['totalChequerasActualmente']}\
+            \n\nTransacción 4:\nEstado: {gold['transacciones'][3]['estado']}\nTipo: {gold['transacciones'][3]['tipo']}\nNúmero de cuenta: {gold['transacciones'][3]['cuentaNumero']}\nCupo diario restante: {gold['transacciones'][3]['cupoDiarioRestante']}\nMonto: {gold['transacciones'][3]['monto']}\nFecha: {gold['transacciones'][3]['fecha']}\nNúmero: {gold['transacciones'][3]['numero']}\nSaldo en cuenta: {gold['transacciones'][3]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {gold['transacciones'][3]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {gold['transacciones'][3]['totalChequerasActualmente']}")
+
+def cargar_datos_black(ruta):
+    with open(ruta) as contenido:
+        black = json.load(contenido)
+        print(f"Numero: {black['numero']}\nNombre: {black['nombre']}\nApellido: {black['apellido']}")
+
+
+nombre = input('Ingrese el nombre del cliente: ')
+nCliente = int(input('Ingrese el número del cliente: '))
+dni = int(input('Ingrese el DNI del cliente: '))
+tipoCliente = input('Ingrese el tipo de cliente (classic, gold o black): ')
+
+#cargar_datos_classic(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_classic.json')
+#cargar_datos_gold(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_gold.json')
+#cargar_datos_black(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_black.json')
 
 class Cliente():
     def __init__(self, nombre, apellido, numero, dni, direccion):
@@ -18,7 +93,7 @@ class Cliente():
         self.direccion = direccion
     
     def __str__(self):
-        print(f"Nombre: {self.nombre}\nApellido: {self.apellido}\
+        print(f"\n\nCLIENTE:\nNombre: {self.nombre}\nApellido: {self.apellido}\
             \nNúmero: {self.numero}\nDNI: {self.dni}\nDirección: {self.direccion}")
 
 class Classic(Cliente):
@@ -38,9 +113,10 @@ class Classic(Cliente):
     
     def __str__(self):
         super().__str__()
-        print(f"Tipo: {self.tipo}\nTarjeta de débito: {self.tarjeta_debito}\nCaja de ahorro en pesos: {self.caja_ahorro_peso}\nCaja de ahorro en dólares: {self.caja_ahorro_dolar}\nCompra/venta dólar: {self.compra_venta_dolar}\nRetiro máximo: {self.retiro_maximo}\
+        print(f"\n\nDATOS DE UN CLIENTE CLASSIC:\nTipo: {self.tipo}\nTarjeta de débito: {self.tarjeta_debito}\nCaja de ahorro en pesos: {self.caja_ahorro_peso}\nCaja de ahorro en dólares: {self.caja_ahorro_dolar}\nCompra/venta dólar: {self.compra_venta_dolar}\nRetiro máximo: {self.retiro_maximo}\
             \nTarjeta de crédito: {self.tarjeta_credito}\nChequera: {self.chequera}\nComisión de transacción: {self.comision_transaccion}\
-            \nLímite de transferencia: {self.limite_transferencia}")
+            \nLímite de transferencia: {self.limite_transferencia}\n\nDATOS DEL CLIENTE CONSULTADO:")
+        print(cargar_datos_classic(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_classic.json'))
 
 class Gold(Cliente):
     def __init__(self, nombre, apellido, numero, dni, direccion):
@@ -60,9 +136,10 @@ class Gold(Cliente):
 
     def __str__(self):
         super().__str__()
-        print(f"Tipo: {self.tipo}\nTerjeta de débito: {self.tarjeta_debito}\nCuenta corriente: {self.cuenta_corriente}\
+        print(f"\n\nDATOS DE UN CLIENTE GOLD:\nTipo: {self.tipo}\nTerjeta de débito: {self.tarjeta_debito}\nCuenta corriente: {self.cuenta_corriente}\
             \nCaja de ahorro en dólares: {self.caja_ahorro_dolar}\nCompra/venta en dólares: {self.compra_venta_dolar}\nRetiro máximo: {self.retiro_maximo}\nTarjeta de crédito: {self.tarjeta_credito}\
-            \nChequera: {self.chequera}\nComisión de transacción: {self.comision_transaccion}\nLímite de transferencia: {self.limite_transferencia}\nMonto descubierto: {self.monto_descubierto}")
+            \nChequera: {self.chequera}\nComisión de transacción: {self.comision_transaccion}\nLímite de transferencia: {self.limite_transferencia}\nMonto descubierto: {self.monto_descubierto}\n\nDATOS DEL CLIENTE CONSULTADO:")
+        print(cargar_datos_gold(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_gold.json'))
 
 class Black(Cliente):
     def __init__(self, nombre, apellido, numero, dni, direccion):
@@ -78,10 +155,25 @@ class Black(Cliente):
         self.comision_transaccion = 0
         self.limite_transferencia = "Sin límite"
         self.monto_descubierto = 10_000
+    
+    def __str__(self):
+        super().__str__()
+        print(f"\n\nDATOS DE UN CLIENTE BLACK:\nTipo: {self.tipo}\nTarjetas de crédito máximas: {self.tarjeta_credito_maximas}\nCaja de ahorro en pesos: {self.caja_ahorro_pesos}\nCuenta corriente en pesos: {self.cuenta_corriente_pesos}\
+            \nCaja de ahorro en dólares: {self.caja_ahorro_dolar}\nRetiro máximo: {self.retiro_maximo}\nChequeras máximas: {self.chequeras_maximas}\nComisión de transacción: {self.comision_transaccion}\
+            \nLímite de transferencia: {self.limite_transferencia}\nMonto descubierto: {self.monto_descubierto}\n\nDATOS DEL CLIENTE CONSULTADO:")
+        print(cargar_datos_black(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_black.json'))
 
 
-#Juancito = Classic(nombre = "Juan", apellido = "Perez", numero = 123123123, dni = 12345678, direccion = "Calle falsa 123")
+NicolasClassic = Classic(nombre = "Nicolas", apellido = "Gaston", numero = 100001, dni = 29494777, direccion = "Rivadavia 7900")
+NicolasGold = Gold(nombre = "Nicolas", apellido = "Gaston", numero = 100001, dni = 29494777, direccion = "Rivadavia 7900")
+NicolasBlack = Black(nombre = "Nicolas", apellido = "Gaston", numero = 100001, dni = 29494777, direccion = "Rivadavia 7900")
 
-#Juancito.__str__()
+if(nombre == 'Nicolas' and nCliente == 100001 and dni == 29494777 and tipoCliente == 'classic'):
+    NicolasClassic.__str__()
+elif(nombre == 'Nicolas' and nCliente == 100001 and dni == 29494777 and tipoCliente == 'gold'):
+    NicolasGold.__str__()
+elif(nombre == 'Nicolas' and nCliente == 100001 and dni == 29494777 and tipoCliente == 'black'):
+    NicolasBlack.__str__()
+else:
+    print('Lo sentimos, este cliente no existe:(. Intente de nuevo!')
 
-numero = input('Ingrese el número de cliente: ')
