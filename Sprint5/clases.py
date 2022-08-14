@@ -1,5 +1,6 @@
 import json
 from operator import index
+import os
 #Las funciones cargar_datos cargan los datos del JSON
 
 classic = {}
@@ -162,9 +163,7 @@ nCliente = int(input('Ingrese el número del cliente: '))
 dni = int(input('Ingrese el DNI del cliente: '))
 tipoCliente = input('Ingrese el tipo de cliente (classic, gold o black): ')
 
-#cargar_datos_classic(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_classic.json')
-#cargar_datos_gold(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_gold.json')
-#cargar_datos_black(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_black.json')
+
 
 class Cliente():
     def __init__(self, nombre, apellido, numero, dni, direccion):
@@ -259,3 +258,51 @@ elif(nombre == 'Nicolas' and nCliente == 100001 and dni == 29494777 and tipoClie
 else:
     print('Lo sentimos, este cliente no existe:(. Intente de nuevo!')
 
+
+folder = "/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/transacciones"
+if os.path.exists(folder) == False:
+    os.mkdir(folder)
+
+
+html = open(folder + '\\' + nombre + '.html', 'w')
+
+html.write('<html lang="en" dir="ltr">')
+html.write('\n    <head>')
+html.write('\n        <title> Datos </title>')
+html.write('\n            <style>')
+html.write('\n                body {')
+html.write('\n                    background-size: 100%; ')
+html.write('\n                }')
+html.write('\n                table {')
+html.write('\n                    with: 350;')
+html.write('\n                }')
+html.write('\n            </style>')
+html.write('\n        <meta charset="UTF-8"')
+html.write('\n    </head>')
+html.write('\n    <body>')
+html.write('\n        <center>')
+html.write('\n            <table border=""> ')
+html.write('\n                <tr>')
+html.write('\n                    <td>Nombre</td>')
+html.write('\n                    <td>' + classic["nombre"] + '</td>')
+html.write('\n                </tr>')
+html.write('\n                <tr>')
+html.write('\n                    <td>Apellido</td>')
+html.write('\n                    <td>' + classic["apellido"] + '</td>')
+html.write('\n                </tr>')
+html.write('\n                <tr>')
+html.write('\n                    <td>Número</td>')
+html.write('\n                    <td>' + classic["numero"] + '</td>')
+html.write('\n                </tr>')
+html.write('\n                <tr>')
+html.write('\n                    <td>DNI</td>')
+html.write('\n                    <td>' + classic["dni"] + '</td>')
+html.write('\n                </tr>')
+html.write('\n                <tr>')
+html.write('\n                    <td>Dirección</td>')
+html.write('\n                    <td>' + classic["direccion"] + '</td>')
+html.write('\n                </tr>')
+html.write('\n        </center>')
+html.write('\n    </body>')
+
+##Nombre, Apellido, Numero, dni, direccion, TRANSACCIONES: transaccion 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
