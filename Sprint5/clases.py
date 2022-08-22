@@ -112,7 +112,7 @@ def cargar_datos_classic(ruta):
             \n\nTransacción 9:\nEstado: {classic['transacciones'][8]['estado']}\nTipo: {classic['transacciones'][8]['tipo']}\nNúmero de cuenta: {classic['transacciones'][8]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][8]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][8]['monto']}\nFecha: {classic['transacciones'][8]['fecha']}\nNúmero: {classic['transacciones'][8]['numero']}\nSaldo en cuenta: {classic['transacciones'][8]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][8]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][8]['totalChequerasActualmente']}\
             \n\nTransacción 10:\nEstado: {classic['transacciones'][9]['estado']}\nRazón: Se ha excedido del monto máximo\nTipo: {classic['transacciones'][9]['tipo']}\nNúmero de cuenta: {classic['transacciones'][9]['cuentaNumero']}\nCupo diario restante: {classic['transacciones'][9]['cupoDiarioRestante']}\nMonto: {classic['transacciones'][9]['monto']}\nFecha: {classic['transacciones'][9]['fecha']}\nNúmero: {classic['transacciones'][9]['numero']}\nSaldo en cuenta: {classic['transacciones'][9]['saldoEnCuenta']}\nTotal de tarjetas de crédito actualmente: {classic['transacciones'][9]['totalTarjetasDeCreditoActualmente']}\nTotal de chequeras actualmente: {classic['transacciones'][9]['totalChequerasActualmente']}")
         #print(estado_de_transacciones_classic(classic))
-
+##doiwfn
 def cargar_datos_gold(ruta):
     with open(ruta) as contenido:
         gold = json.load(contenido)
