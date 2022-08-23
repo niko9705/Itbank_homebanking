@@ -195,7 +195,7 @@ class Classic(Cliente):
         print(f"\n\nDATOS DE UN CLIENTE CLASSIC:\nTipo: {self.tipo}\nTarjeta de débito: {self.tarjeta_debito}\nCaja de ahorro en pesos: {self.caja_ahorro_peso}\nCaja de ahorro en dólares: {self.caja_ahorro_dolar}\nCompra/venta dólar: {self.compra_venta_dolar}\nRetiro máximo: {self.retiro_maximo}\
             \nTarjeta de crédito: {self.tarjeta_credito}\nChequera: {self.chequera}\nComisión de transacción: {self.comision_transaccion}\
             \nLímite de transferencia: {self.limite_transferencia}\n\nDATOS DEL CLIENTE CONSULTADO:")
-        print(cargar_datos_classic(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_classic.json'))
+        print(cargar_datos_classic(ruta = 'Sprint5\\JSON\\eventos_classic.json'))
 
 class Gold(Cliente):
     def __init__(self, nombre, apellido, numero, dni, direccion):
@@ -218,7 +218,7 @@ class Gold(Cliente):
         print(f"\n\nDATOS DE UN CLIENTE GOLD:\nTipo: {self.tipo}\nTerjeta de débito: {self.tarjeta_debito}\nCuenta corriente: {self.cuenta_corriente}\
             \nCaja de ahorro en dólares: {self.caja_ahorro_dolar}\nCompra/venta en dólares: {self.compra_venta_dolar}\nRetiro máximo: {self.retiro_maximo}\nTarjeta de crédito: {self.tarjeta_credito}\
             \nChequera: {self.chequera}\nComisión de transacción: {self.comision_transaccion}\nLímite de transferencia: {self.limite_transferencia}\nMonto descubierto: {self.monto_descubierto}\n\nDATOS DEL CLIENTE CONSULTADO:")
-        print(cargar_datos_gold(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_gold.json'))
+        print(cargar_datos_gold(ruta = 'Sprint5\\JSON\\eventos_gold.json'))
 
 class Black(Cliente):
     def __init__(self, nombre, apellido, numero, dni, direccion):
@@ -240,7 +240,7 @@ class Black(Cliente):
         print(f"\n\nDATOS DE UN CLIENTE BLACK:\nTipo: {self.tipo}\nTarjetas de crédito máximas: {self.tarjeta_credito_maximas}\nCaja de ahorro en pesos: {self.caja_ahorro_pesos}\nCuenta corriente en pesos: {self.cuenta_corriente_pesos}\
             \nCaja de ahorro en dólares: {self.caja_ahorro_dolar}\nRetiro máximo: {self.retiro_maximo}\nChequeras máximas: {self.chequeras_maximas}\nComisión de transacción: {self.comision_transaccion}\
             \nLímite de transferencia: {self.limite_transferencia}\nMonto descubierto: {self.monto_descubierto}\n\nDATOS DEL CLIENTE CONSULTADO:")
-        print(cargar_datos_black(ruta = '/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/JSON/eventos_black.json'))
+        print(cargar_datos_black(ruta = 'Sprint5\\JSON\\eventos_black.json'))
 
 
 NicolasClassic = Classic(nombre = "Nicolas", apellido = "Gaston", numero = 100001, dni = 29494777, direccion = "Rivadavia 7900")
@@ -257,50 +257,50 @@ else:
     print('Lo sentimos, este cliente no existe:(. Intente de nuevo!')
 
 
-folder = "/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/transacciones"
-if os.path.exists(folder) == False:
-    os.mkdir(folder)
+#folder = "/Users/Note/Documents/full stack/Itbank_homebanking/Sprint5/transacciones"
+#if os.path.exists(folder) == False:
+#    os.mkdir(folder)
 
 
-html = open(folder + '\\' + nombre + '.html', 'w')
+#html = open(folder + '\\' + nombre + '.html', 'w')
 
-html.write('<html lang="en" dir="ltr">')
-html.write('\n    <head>')
-html.write('\n        <title> Datos </title>')
-html.write('\n            <style>')
-html.write('\n                body {')
-html.write('\n                    background-size: 100%; ')
-html.write('\n                }')
-html.write('\n                table {')
-html.write('\n                    with: 350;')
-html.write('\n                }')
-html.write('\n            </style>')
-html.write('\n        <meta charset="UTF-8"')
-html.write('\n    </head>')
-html.write('\n    <body>')
-html.write('\n        <center>')
-html.write('\n            <table border=""> ')
-html.write('\n                <tr>')
-html.write('\n                    <td>Nombre</td>')
+#html.write('<html lang="en" dir="ltr">')
+#html.write('\n    <head>')
+#html.write('\n        <title> Datos </title>')
+#html.write('\n            <style>')
+#html.write('\n                body {')
+#html.write('\n                    background-size: 100%; ')
+#html.write('\n                }')
+#html.write('\n                table {')
+#html.write('\n                    with: 350;')
+#html.write('\n                }')
+#html.write('\n            </style>')
+#html.write('\n        <meta charset="UTF-8"')
+#html.write('\n    </head>')
+#html.write('\n    <body>')
+#html.write('\n        <center>')
+#html.write('\n            <table border=""> ')
+#html.write('\n                <tr>')
+#html.write('\n                    <td>Nombre</td>')
 #html.write('\n                    <td>' + classic["nombre"] + '</td>')
-html.write('\n                </tr>')
-html.write('\n                <tr>')
+#html.write('\n                </tr>')
+#html.write('\n                <tr>')
 #html.write('\n                    <td>Apellido</td>')
 #html.write('\n                    <td>' + classic["apellido"] + '</td>')
-html.write('\n                </tr>')
-html.write('\n                <tr>')
+#html.write('\n                </tr>')
+#html.write('\n                <tr>')
 #html.write('\n                    <td>Número</td>')
 #html.write('\n                    <td>' + classic["numero"] + '</td>')
-html.write('\n                </tr>')
-html.write('\n                <tr>')
+#html.write('\n                </tr>')
+#html.write('\n                <tr>')
 #html.write('\n                    <td>DNI</td>')
 #html.write('\n                    <td>' + classic["dni"] + '</td>')
-html.write('\n                </tr>')
-html.write('\n                <tr>')
+#html.write('\n                </tr>')
+#html.write('\n                <tr>')
 #html.write('\n                    <td>Dirección</td>')
 #html.write('\n                    <td>' + classic["direccion"] + '</td>')
-html.write('\n                </tr>')
-html.write('\n        </center>')
-html.write('\n    </body>')
+#html.write('\n                </tr>')
+#html.write('\n        </center>')
+#html.write('\n    </body>')
 
 ##Nombre, Apellido, Numero, dni, direccion, TRANSACCIONES: transaccion 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
